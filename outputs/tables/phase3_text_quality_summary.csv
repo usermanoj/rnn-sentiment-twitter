@@ -1,0 +1,7 @@
+metric,value
+rows_with_urls_in_raw_text,1706
+rows_with_mentions_in_raw_text,11478
+rows_with_hashtags_in_raw_text,0
+rows_with_empty_model_text_after_cleaning_removed,139
+rows_with_empty_processed_text_remaining,1151
+stemming_method,fallback_suffix_stemmer

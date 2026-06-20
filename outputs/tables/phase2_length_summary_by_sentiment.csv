@@ -1,0 +1,5 @@
+sentiment,char_len_count,char_len_mean,char_len_median,char_len_std,char_len_min,char_len_max,word_len_count,word_len_mean,word_len_median,word_len_std,word_len_min,word_len_max
+Irrelevant,12990,109.95,92.0,79.41,0,692,12990,19.46,16.0,14.3,0,163
+Negative,22542,110.38,90.0,82.13,0,727,22542,19.88,16.0,14.98,0,198
+Neutral,18318,117.47,104.0,78.01,0,957,18318,20.02,17.0,14.26,0,198
+Positive,20832,95.11,74.0,77.56,0,692,20832,17.04,13.0,14.08,0,198

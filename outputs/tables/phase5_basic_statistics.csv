@@ -1,0 +1,14 @@
+metric,value
+rows,"58,841"
+columns,12
+unique_tweet_ids,"10,270"
+unique_entities,32
+unique_sentiments,3
+mode_sentiment,Negative
+mode_entity,TomClancysGhostRecon
+mean_raw_word_len,19.56
+median_raw_word_len,16.00
+mean_model_token_count,19.04
+median_model_token_count,16.00
+p95_model_token_count,47.00
+p99_model_token_count,56.00
