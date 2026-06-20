@@ -154,6 +154,50 @@ Rows in conflicting model_text groups: 1,725
 
 The duplicate-text audit is intentionally not applied as a row-removal step in Phase 4. It should guide Phase 6 train/test splitting and optional text-label deduplication so repeated cleaned text does not leak across splits.
 
+## Phase 5 Status - Exploratory Data Analysis
+
+Phase 5 has been implemented on branch `phase/05-eda`.
+
+Completed work:
+
+- Loaded the Phase 4 preprocessed dataset.
+- Produced basic statistics for the cleaned three-class dataset.
+- Generated sentiment distribution and entity distribution tables.
+- Generated tweet length summaries by sentiment.
+- Generated top-token frequency tables by sentiment.
+- Generated SVG visualizations under `outputs/figures`:
+  - `phase5_sentiment_distribution.svg`
+  - `phase5_top_entities.svg`
+  - `phase5_tweet_length_by_sentiment.svg`
+  - `phase5_wordcloud_negative.svg`
+  - `phase5_wordcloud_positive.svg`
+  - `phase5_top_tokens_by_sentiment.svg`
+- Generated Phase 5 EDA tables under `outputs/tables`.
+- Generated written EDA insights under `outputs/reports/phase5_eda_insights.md`.
+
+Phase 5 verified run:
+
+```text
+Rows analyzed: 58,841
+Entities: 32
+Sentiments: 3
+Negative: 21,605 (36.72%)
+Positive: 19,644 (33.38%)
+Neutral: 17,592 (29.90%)
+Most frequent entity: TomClancysGhostRecon with 2,254 rows (3.83%)
+Model token count p95: 47
+Model token count p99: 56
+Recommended initial max sequence length: 60
+```
+
+EDA carry-forward decision:
+
+- Use stratified train, validation, and test splits because class balance is moderate but not equal.
+- Report macro F1 as well as accuracy during evaluation.
+- Build the model vocabulary from the training split only to avoid leakage.
+- Treat 60 tokens as the initial maximum sequence length candidate.
+- Use the Phase 4 duplicate-text audit before final modeling to reduce leakage risk.
+
 ## Rubric Alignment
 
 The final notebook and report should visibly cover every rubric criterion:
