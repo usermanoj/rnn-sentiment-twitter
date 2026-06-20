@@ -1,0 +1,11 @@
+metric,value
+train_rows,"41,189"
+training_token_instances,"778,469"
+unique_training_tokens,"23,376"
+min_token_frequency,2
+max_vocab_size_including_special_tokens,"20,000"
+retained_text_tokens,"17,922"
+special_tokens,"<PAD>, <OOV>"
+final_vocabulary_size,"17,924"
+pad_token_id,0
+oov_token_id,1

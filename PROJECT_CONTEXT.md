@@ -198,6 +198,48 @@ EDA carry-forward decision:
 - Treat 60 tokens as the initial maximum sequence length candidate.
 - Use the Phase 4 duplicate-text audit before final modeling to reduce leakage risk.
 
+## Phase 6 Status - Feature Engineering
+
+Phase 6 has been implemented on branch `phase/06-feature-engineering`.
+
+Completed work:
+
+- Loaded the Phase 4 preprocessed dataset.
+- Created leakage-aware train, validation, and test splits by assigning each unique `model_text` value to exactly one split.
+- Preserved the Phase 4 label mapping:
+  - `Negative` -> `0`
+  - `Neutral` -> `1`
+  - `Positive` -> `2`
+- Built the RNN vocabulary from training rows only.
+- Reserved special token IDs for later PyTorch embedding use:
+  - `<PAD>` -> `0`
+  - `<OOV>` -> `1`
+- Converted each tweet into a padded integer sequence with maximum length 60.
+- Saved compressed NumPy arrays for train, validation, and test splits under `outputs/data/phase6_sequences.npz`.
+- Saved a row-level feature audit under `outputs/data/twitter_features_phase6.csv`.
+- Saved training-derived vocabulary metadata under `outputs/data/phase6_vocabulary.json`.
+- Saved TF-IDF vocabulary metadata for an optional baseline under `outputs/data/phase6_tfidf_vocabulary.csv`.
+- Generated Phase 6 audit tables under `outputs/tables`.
+- Generated a short feature engineering summary under `outputs/reports/phase6_feature_engineering_summary.md`.
+
+Phase 6 verified run:
+
+```text
+Rows engineered: 58,841
+Train rows: 41,189
+Validation rows: 8,826
+Test rows: 8,826
+model_text values appearing in multiple splits: 0
+Conflicting-label model_text groups kept in one split: 123
+Rows in conflicting-label model_text groups: 1,725
+Vocabulary size including special tokens: 17,924
+Max sequence length: 60
+Rows truncated at max sequence length: 213
+TF-IDF metadata features: 5,000
+```
+
+Phase 6 intentionally did not train a model. The next phase should use `outputs/data/phase6_sequences.npz` to create PyTorch `Dataset` and `DataLoader` objects, then build an embedding-based LSTM or GRU with `input_dim=17,924` and `padding_idx=0`.
+
 ## Rubric Alignment
 
 The final notebook and report should visibly cover every rubric criterion:
