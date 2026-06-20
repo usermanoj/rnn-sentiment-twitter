@@ -240,6 +240,46 @@ TF-IDF metadata features: 5,000
 
 Phase 6 intentionally did not train a model. The next phase should use `outputs/data/phase6_sequences.npz` to create PyTorch `Dataset` and `DataLoader` objects, then build an embedding-based LSTM or GRU with `input_dim=17,924` and `padding_idx=0`.
 
+## Phase 7 Status - Baseline RNN Modeling
+
+Phase 7 has been implemented on branch `phase/07-rnn-modeling`.
+
+Completed work:
+
+- Merged the completed Phase 6 artifacts into the Phase 7 branch.
+- Loaded `outputs/data/phase6_sequences.npz` and `outputs/data/phase6_feature_config.json`.
+- Created PyTorch `TensorDataset` and `DataLoader` objects for the train and validation splits.
+- Built a compact embedding plus GRU sentiment classifier.
+- Used class-weighted cross entropy to account for moderate class imbalance.
+- Trained the model on the training split for three epochs.
+- Monitored validation loss, accuracy, and macro F1 after every epoch.
+- Saved the best validation checkpoint under `outputs/models/phase7_baseline_gru_state.pt`.
+- Saved checkpoint metadata under `outputs/models/phase7_baseline_gru_metadata.json`.
+- Saved Phase 7 history, validation metrics, confusion matrix, and model config under `outputs/tables`.
+- Saved a learning curve under `outputs/figures/phase7_learning_curve.svg`.
+- Generated a short modeling summary under `outputs/reports/phase7_rnn_modeling_summary.md`.
+
+Phase 7 verified run:
+
+```text
+Runtime: PyTorch 2.10.0+cpu
+Device: CPU
+Train rows: 41,189
+Validation rows: 8,826
+Held-out test rows reserved for Phase 8: 8,826
+Vocabulary size: 17,924
+Model: Embedding(17,924, 64) + GRU(hidden=64) + dropout + linear classifier
+Trainable parameters: 1,172,291
+Epochs trained: 3
+Best validation epoch: 3
+Best validation loss: 0.8735
+Best validation accuracy: 0.6313
+Best validation macro F1: 0.6185
+Held-out test split used: no
+```
+
+Phase 7 intentionally used only the train and validation splits. The next phase should load the saved checkpoint and evaluate it once on the held-out test split, reporting accuracy, precision, recall, macro F1, weighted F1, and a confusion matrix.
+
 ## Rubric Alignment
 
 The final notebook and report should visibly cover every rubric criterion:

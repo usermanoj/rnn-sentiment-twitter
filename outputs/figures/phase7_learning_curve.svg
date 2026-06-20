@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="450.0" y="36" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#222">Phase 7 Baseline GRU Learning Curve</text>
+<line x1="80" y1="450" x2="750" y2="450" stroke="#333"/>
+<line x1="80" y1="70" x2="80" y2="450" stroke="#333"/>
+<text x="450.0" y="496" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Epoch</text>
+<line x1="80" y1="450.0" x2="750" y2="450.0" stroke="#e5e5e5"/>
+<text x="70" y="454.0" text-anchor="end" font-family="Arial" font-size="12" fill="#555">0.34</text>
+<line x1="80" y1="374.0" x2="750" y2="374.0" stroke="#e5e5e5"/>
+<text x="70" y="378.0" text-anchor="end" font-family="Arial" font-size="12" fill="#555">0.50</text>
+<line x1="80" y1="298.0" x2="750" y2="298.0" stroke="#e5e5e5"/>
+<text x="70" y="302.0" text-anchor="end" font-family="Arial" font-size="12" fill="#555">0.66</text>
+<line x1="80" y1="222.0" x2="750" y2="222.0" stroke="#e5e5e5"/>
+<text x="70" y="226.0" text-anchor="end" font-family="Arial" font-size="12" fill="#555">0.81</text>
+<line x1="80" y1="146.0" x2="750" y2="146.0" stroke="#e5e5e5"/>
+<text x="70" y="150.0" text-anchor="end" font-family="Arial" font-size="12" fill="#555">0.97</text>
+<line x1="80" y1="70.0" x2="750" y2="70.0" stroke="#e5e5e5"/>
+<text x="70" y="74.0" text-anchor="end" font-family="Arial" font-size="12" fill="#555">1.13</text>
+<text x="80.0" y="474" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">1</text>
+<text x="415.0" y="474" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">2</text>
+<text x="750.0" y="474" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">3</text>
+<polyline fill="none" stroke="#b4494b" stroke-width="3" points="80.0,94.0 415.0,136.6 750.0,184.7"/>
+<circle cx="80.0" cy="94.0" r="4" fill="#b4494b"/>
+<circle cx="415.0" cy="136.6" r="4" fill="#b4494b"/>
+<circle cx="750.0" cy="184.7" r="4" fill="#b4494b"/>
+<rect x="775" y="68" width="14" height="14" fill="#b4494b"/>
+<text x="796" y="80" font-family="Arial" font-size="13" fill="#222">train_loss</text>
+<polyline fill="none" stroke="#2f6f9f" stroke-width="3" points="80.0,115.0 415.0,169.2 750.0,193.8"/>
+<circle cx="80.0" cy="115.0" r="4" fill="#2f6f9f"/>
+<circle cx="415.0" cy="169.2" r="4" fill="#2f6f9f"/>
+<circle cx="750.0" cy="193.8" r="4" fill="#2f6f9f"/>
+<rect x="775" y="92" width="14" height="14" fill="#2f6f9f"/>
+<text x="796" y="104" font-family="Arial" font-size="13" fill="#222">validation_loss</text>
+<polyline fill="none" stroke="#8a6f2a" stroke-width="3" points="80.0,426.0 415.0,369.2 750.0,328.8"/>
+<circle cx="80.0" cy="426.0" r="4" fill="#8a6f2a"/>
+<circle cx="415.0" cy="369.2" r="4" fill="#8a6f2a"/>
+<circle cx="750.0" cy="328.8" r="4" fill="#8a6f2a"/>
+<rect x="775" y="116" width="14" height="14" fill="#8a6f2a"/>
+<text x="796" y="128" font-family="Arial" font-size="13" fill="#222">train_macro_f1</text>
+<polyline fill="none" stroke="#3f8f61" stroke-width="3" points="80.0,390.6 415.0,339.5 750.0,316.2"/>
+<circle cx="80.0" cy="390.6" r="4" fill="#3f8f61"/>
+<circle cx="415.0" cy="339.5" r="4" fill="#3f8f61"/>
+<circle cx="750.0" cy="316.2" r="4" fill="#3f8f61"/>
+<rect x="775" y="140" width="14" height="14" fill="#3f8f61"/>
+<text x="796" y="152" font-family="Arial" font-size="13" fill="#222">validation_macro_f1</text>
+</svg>
