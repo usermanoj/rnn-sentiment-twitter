@@ -87,6 +87,37 @@ Completed work:
 
 No data cleaning has been applied in Phase 2. Cleaning, label filtering, and text normalization are intentionally deferred to Phase 3.
 
+## Phase 3 Status - Data Cleaning
+
+Phase 3 has been implemented on branch `phase/03-data-cleaning`.
+
+Completed work:
+
+- Dropped blank or missing tweet text rows.
+- Removed exact duplicate rows after blank-text removal.
+- Excluded `Irrelevant` to align with the three-class assignment objective.
+- Cleaned tweet text by lowercasing and removing URLs, mentions, hashtags, special characters, and extra whitespace.
+- Tokenized cleaned text.
+- Removed stop words while preserving negation words.
+- Applied stemming, using NLTK Porter stemming when NLTK is installed and a deterministic fallback suffix stemmer otherwise.
+- Created two cleaned text fields:
+  - `model_text` for RNN sequence modeling.
+  - `processed_text` for rubric-visible stop-word removal, stemming, top-word analysis, and word clouds.
+- Saved the cleaned dataset under `outputs/data/twitter_training_cleaned_phase3.csv`.
+- Generated Phase 3 audit tables under `outputs/tables`.
+- Generated a short cleaning summary under `outputs/reports/phase3_cleaning_summary.md`.
+
+Phase 3 row counts from the verified run:
+
+```text
+Raw rows: 74,682
+Removed blank or missing tweet text rows: 858
+Removed exact duplicate rows after blank-text removal: 2,340
+Removed Irrelevant rows: 12,504
+Removed rows empty after text cleaning: 139
+Final cleaned rows: 58,841
+```
+
 ## Rubric Alignment
 
 The final notebook and report should visibly cover every rubric criterion:
@@ -134,6 +165,7 @@ Recommended model sequence:
 |-- src/
 |   `-- __init__.py
 |-- outputs/
+|   |-- data/
 |   |-- figures/
 |   |-- models/
 |   |-- reports/
