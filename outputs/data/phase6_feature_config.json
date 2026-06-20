@@ -1,0 +1,25 @@
+{
+  "random_seed": 42,
+  "split_proportions": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "group_column_for_split": "model_text",
+  "label_to_id": {
+    "Negative": 0,
+    "Neutral": 1,
+    "Positive": 2
+  },
+  "max_sequence_length": 60,
+  "max_vocab_size": 20000,
+  "min_token_frequency": 2,
+  "pad_token": "<PAD>",
+  "pad_token_id": 0,
+  "oov_token": "<OOV>",
+  "oov_token_id": 1,
+  "embedding_input_dim_for_phase7": 17924,
+  "embedding_padding_idx_for_phase7": 0,
+  "tfidf_feature_count": 5000,
+  "model_training_run": false
+}
