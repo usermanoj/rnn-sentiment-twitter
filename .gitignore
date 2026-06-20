@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Generated local outputs
+outputs/models/*.pt
+outputs/models/*.pth
+outputs/models/*.ckpt
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

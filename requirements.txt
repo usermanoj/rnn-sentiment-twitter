@@ -1,0 +1,23 @@
+# Core data handling
+pandas
+numpy
+
+# Machine learning and evaluation
+scikit-learn
+torch
+
+# Visualization and EDA
+matplotlib
+seaborn
+wordcloud
+
+# Text preprocessing
+nltk
+
+# Notebook execution
+jupyter
+notebook
+ipykernel
+
+# Utilities
+tqdm
