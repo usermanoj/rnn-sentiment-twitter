@@ -118,6 +118,42 @@ Removed rows empty after text cleaning: 139
 Final cleaned rows: 58,841
 ```
 
+## Phase 4 Status - Text Preprocessing
+
+Phase 4 has been implemented on branch `phase/04-text-preprocessing`.
+
+Completed work:
+
+- Loaded the cleaned Phase 3 dataset.
+- Validated the remaining three assignment labels: `Negative`, `Neutral`, and `Positive`.
+- Created `analysis_text`, using `processed_text` where available and falling back to `model_text` when stop-word removal and stemming left a row empty.
+- Created token fields in the notebook for `model_text` and `analysis_text`.
+- Saved a compact preprocessed dataset under `outputs/data/twitter_text_preprocessed_phase4.csv`.
+- Created label mapping metadata for later modeling:
+  - `Negative` -> `0`
+  - `Neutral` -> `1`
+  - `Positive` -> `2`
+- Generated token length summaries and top-token frequency tables under `outputs/tables`.
+- Generated a duplicate-text audit to identify repeated cleaned model inputs and conflicting cleaned-text labels before modeling.
+- Generated a short preprocessing summary under `outputs/reports/phase4_text_preprocessing_summary.md`.
+
+Phase 4 verified run:
+
+```text
+Rows preprocessed: 58,841
+Empty processed_text rows handled with model_text fallback: 1,151
+Empty model_text rows: 0
+Empty analysis_text rows: 0
+Model token count p95: 47
+Model token count p99: 56
+Recommended max sequence length for later padding: 60
+Duplicate model_text + sentiment rows to audit before modeling: 3,851
+Cleaned model_text values with multiple sentiment labels: 123
+Rows in conflicting model_text groups: 1,725
+```
+
+The duplicate-text audit is intentionally not applied as a row-removal step in Phase 4. It should guide Phase 6 train/test splitting and optional text-label deduplication so repeated cleaned text does not leak across splits.
+
 ## Rubric Alignment
 
 The final notebook and report should visibly cover every rubric criterion:
