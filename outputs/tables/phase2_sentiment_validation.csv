@@ -1,0 +1,4 @@
+check,result
+assignment_sentiments_present,True
+extra_labels_in_raw_data,Irrelevant
+recommended_main_model_scope,"Use Negative, Neutral, and Positive; document and exclude Irrelevant before modeling."

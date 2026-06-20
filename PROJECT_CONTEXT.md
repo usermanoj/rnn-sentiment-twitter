@@ -73,6 +73,20 @@ Positive: 19,677
 Neutral:  17,651
 ```
 
+## Phase 2 Status - Data Loading And Validation
+
+Phase 2 has been implemented on branch `phase/02-data-loading-validation`.
+
+Completed work:
+
+- Loaded `twitter_training.csv` with explicit no-header column names.
+- Validated schema, data types, missing values, blank tweet text, duplicate rows, sentiment labels, text lengths, and entity distribution.
+- Confirmed the raw data contains the extra label `Irrelevant`.
+- Generated audit tables under `outputs/tables`.
+- Generated a short validation summary under `outputs/reports/phase2_validation_summary.md`.
+
+No data cleaning has been applied in Phase 2. Cleaning, label filtering, and text normalization are intentionally deferred to Phase 3.
+
 ## Rubric Alignment
 
 The final notebook and report should visibly cover every rubric criterion:
