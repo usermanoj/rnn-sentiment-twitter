@@ -1,0 +1,10 @@
+true_label,predicted_label,count,percent_of_test
+Negative,Negative,2564,29.05
+Negative,Neutral,215,2.44
+Negative,Positive,462,5.23
+Neutral,Negative,757,8.58
+Neutral,Neutral,1209,13.7
+Neutral,Positive,673,7.63
+Positive,Negative,751,8.51
+Positive,Neutral,331,3.75
+Positive,Positive,1864,21.12

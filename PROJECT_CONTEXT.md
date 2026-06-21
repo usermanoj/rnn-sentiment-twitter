@@ -280,6 +280,44 @@ Held-out test split used: no
 
 Phase 7 intentionally used only the train and validation splits. The next phase should load the saved checkpoint and evaluate it once on the held-out test split, reporting accuracy, precision, recall, macro F1, weighted F1, and a confusion matrix.
 
+## Phase 8 Status - Held-Out Evaluation
+
+Phase 8 has been implemented on branch `phase/08-evaluation`.
+
+Completed work:
+
+- Merged the completed Phase 7 baseline modeling artifacts into the Phase 8 branch.
+- Loaded `outputs/models/phase7_baseline_gru_state.pt` and checkpoint metadata.
+- Recreated the saved embedding plus GRU architecture from Phase 7 metadata.
+- Loaded `X_test`, `y_test`, and `row_id_test` from `outputs/data/phase6_sequences.npz`.
+- Verified every evaluated row belongs to the Phase 6 `test` split.
+- Evaluated the saved Phase 7 checkpoint exactly once on the held-out test split.
+- Computed test loss, accuracy, precision, recall, macro F1, weighted F1, and a confusion matrix.
+- Saved full test predictions under `outputs/data/phase8_test_predictions.csv`.
+- Saved Phase 8 metrics, confusion matrices, prediction distribution, and sample predictions under `outputs/tables`.
+- Saved a confusion matrix figure under `outputs/figures/phase8_test_confusion_matrix.svg`.
+- Generated a short evaluation summary under `outputs/reports/phase8_evaluation_summary.md`.
+
+Phase 8 verified run:
+
+```text
+Evaluated checkpoint: outputs/models/phase7_baseline_gru_state.pt
+Test rows: 8,826
+Test weighted cross-entropy loss: 0.8627
+Test accuracy: 0.6387
+Test macro precision: 0.6467
+Test macro recall: 0.6273
+Test macro F1: 0.6262
+Test weighted F1: 0.6313
+Negative F1: 0.7012
+Neutral F1: 0.5503
+Positive F1: 0.6271
+Most common error pattern: Neutral predicted as Negative (757 rows)
+Model retraining or tuning in this phase: no
+```
+
+Phase 8 intentionally did not retrain, tune, or select a model. Phase 9 should treat these held-out test metrics as the baseline result and perform model-improvement experiments using training and validation data before making any further test-set comparisons.
+
 ## Rubric Alignment
 
 The final notebook and report should visibly cover every rubric criterion:
