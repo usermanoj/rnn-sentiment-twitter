@@ -1,0 +1,7 @@
+step,rows_removed,rows_remaining
+raw_rows,0,74682
+drop_blank_or_missing_tweet_text,858,73824
+drop_exact_duplicate_rows,2340,71484
+exclude_irrelevant_label,12504,58980
+drop_empty_text_after_cleaning,139,58841
+final_cleaned_rows,0,58841

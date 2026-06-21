@@ -1,0 +1,35 @@
+{
+  "checkpoint_path": "C:\\Projects\\RNN-Graded-Mini-Project\\outputs\\models\\phase7_baseline_gru_state.pt",
+  "history_path": "C:\\Projects\\RNN-Graded-Mini-Project\\outputs\\tables\\phase7_training_history.csv",
+  "best_epoch": 3,
+  "best_validation_macro_f1": 0.6185433849607042,
+  "total_training_seconds": 11.31,
+  "model_config": {
+    "model_name": "baseline_embedding_gru",
+    "vocab_size": 17924,
+    "embedding_dim": 64,
+    "hidden_dim": 64,
+    "num_layers": 1,
+    "dropout_rate": 0.3,
+    "batch_size": 512,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 3,
+    "gradient_clip_norm": 1.0,
+    "class_weights": {
+      "Negative": 0.9078065752983093,
+      "Neutral": 1.1149640083312988,
+      "Positive": 0.9984486103057861
+    },
+    "parameter_count": 1172291,
+    "trainable_parameter_count": 1172291,
+    "device": "cpu",
+    "test_split_used": false
+  },
+  "class_names": [
+    "Negative",
+    "Neutral",
+    "Positive"
+  ],
+  "test_split_used": false
+}

@@ -1,0 +1,7 @@
+label,precision,recall,f1_score,support
+Negative,0.6203,0.7864,0.6935,3240
+Neutral,0.6548,0.4543,0.5365,2639
+Positive,0.6321,0.6193,0.6256,2947
+accuracy,0.6313,0.6313,0.6313,8826
+macro_avg,0.6357,0.62,0.6185,8826
+weighted_avg,0.6346,0.6313,0.6239,8826

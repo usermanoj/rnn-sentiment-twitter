@@ -1,0 +1,6 @@
+metric,value,phase5_or_phase6_action
+duplicate_model_text_rows,4033,Audit before EDA; repeated cleaned text can dominate frequency counts.
+duplicate_model_text_and_sentiment_rows,3851,Consider deduplicating text-label pairs inside the modeling dataset if leakage risk is high.
+duplicate_analysis_text_and_sentiment_rows,8506,Use with care for EDA only; analysis_text is more aggressively reduced than model_text.
+model_text_values_with_multiple_sentiment_labels,123,Inspect before modeling because the same cleaned text carries multiple labels.
+rows_in_conflicting_model_text_groups,1725,Avoid random leakage by handling or grouping these cases before final train/test split.

@@ -1,0 +1,5 @@
+metric,value
+blank_or_missing_tweet_text_rows,858
+exact_duplicate_rows,2700
+duplicate_tweet_text_rows_non_null,4505
+duplicate_tweet_text_and_sentiment_rows_non_null,4227

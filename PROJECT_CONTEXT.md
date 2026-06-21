@@ -73,6 +73,213 @@ Positive: 19,677
 Neutral:  17,651
 ```
 
+## Phase 2 Status - Data Loading And Validation
+
+Phase 2 has been implemented on branch `phase/02-data-loading-validation`.
+
+Completed work:
+
+- Loaded `twitter_training.csv` with explicit no-header column names.
+- Validated schema, data types, missing values, blank tweet text, duplicate rows, sentiment labels, text lengths, and entity distribution.
+- Confirmed the raw data contains the extra label `Irrelevant`.
+- Generated audit tables under `outputs/tables`.
+- Generated a short validation summary under `outputs/reports/phase2_validation_summary.md`.
+
+No data cleaning has been applied in Phase 2. Cleaning, label filtering, and text normalization are intentionally deferred to Phase 3.
+
+## Phase 3 Status - Data Cleaning
+
+Phase 3 has been implemented on branch `phase/03-data-cleaning`.
+
+Completed work:
+
+- Dropped blank or missing tweet text rows.
+- Removed exact duplicate rows after blank-text removal.
+- Excluded `Irrelevant` to align with the three-class assignment objective.
+- Cleaned tweet text by lowercasing and removing URLs, mentions, hashtags, special characters, and extra whitespace.
+- Tokenized cleaned text.
+- Removed stop words while preserving negation words.
+- Applied stemming, using NLTK Porter stemming when NLTK is installed and a deterministic fallback suffix stemmer otherwise.
+- Created two cleaned text fields:
+  - `model_text` for RNN sequence modeling.
+  - `processed_text` for rubric-visible stop-word removal, stemming, top-word analysis, and word clouds.
+- Saved the cleaned dataset under `outputs/data/twitter_training_cleaned_phase3.csv`.
+- Generated Phase 3 audit tables under `outputs/tables`.
+- Generated a short cleaning summary under `outputs/reports/phase3_cleaning_summary.md`.
+
+Phase 3 row counts from the verified run:
+
+```text
+Raw rows: 74,682
+Removed blank or missing tweet text rows: 858
+Removed exact duplicate rows after blank-text removal: 2,340
+Removed Irrelevant rows: 12,504
+Removed rows empty after text cleaning: 139
+Final cleaned rows: 58,841
+```
+
+## Phase 4 Status - Text Preprocessing
+
+Phase 4 has been implemented on branch `phase/04-text-preprocessing`.
+
+Completed work:
+
+- Loaded the cleaned Phase 3 dataset.
+- Validated the remaining three assignment labels: `Negative`, `Neutral`, and `Positive`.
+- Created `analysis_text`, using `processed_text` where available and falling back to `model_text` when stop-word removal and stemming left a row empty.
+- Created token fields in the notebook for `model_text` and `analysis_text`.
+- Saved a compact preprocessed dataset under `outputs/data/twitter_text_preprocessed_phase4.csv`.
+- Created label mapping metadata for later modeling:
+  - `Negative` -> `0`
+  - `Neutral` -> `1`
+  - `Positive` -> `2`
+- Generated token length summaries and top-token frequency tables under `outputs/tables`.
+- Generated a duplicate-text audit to identify repeated cleaned model inputs and conflicting cleaned-text labels before modeling.
+- Generated a short preprocessing summary under `outputs/reports/phase4_text_preprocessing_summary.md`.
+
+Phase 4 verified run:
+
+```text
+Rows preprocessed: 58,841
+Empty processed_text rows handled with model_text fallback: 1,151
+Empty model_text rows: 0
+Empty analysis_text rows: 0
+Model token count p95: 47
+Model token count p99: 56
+Recommended max sequence length for later padding: 60
+Duplicate model_text + sentiment rows to audit before modeling: 3,851
+Cleaned model_text values with multiple sentiment labels: 123
+Rows in conflicting model_text groups: 1,725
+```
+
+The duplicate-text audit is intentionally not applied as a row-removal step in Phase 4. It should guide Phase 6 train/test splitting and optional text-label deduplication so repeated cleaned text does not leak across splits.
+
+## Phase 5 Status - Exploratory Data Analysis
+
+Phase 5 has been implemented on branch `phase/05-eda`.
+
+Completed work:
+
+- Loaded the Phase 4 preprocessed dataset.
+- Produced basic statistics for the cleaned three-class dataset.
+- Generated sentiment distribution and entity distribution tables.
+- Generated tweet length summaries by sentiment.
+- Generated top-token frequency tables by sentiment.
+- Generated SVG visualizations under `outputs/figures`:
+  - `phase5_sentiment_distribution.svg`
+  - `phase5_top_entities.svg`
+  - `phase5_tweet_length_by_sentiment.svg`
+  - `phase5_wordcloud_negative.svg`
+  - `phase5_wordcloud_positive.svg`
+  - `phase5_top_tokens_by_sentiment.svg`
+- Generated Phase 5 EDA tables under `outputs/tables`.
+- Generated written EDA insights under `outputs/reports/phase5_eda_insights.md`.
+
+Phase 5 verified run:
+
+```text
+Rows analyzed: 58,841
+Entities: 32
+Sentiments: 3
+Negative: 21,605 (36.72%)
+Positive: 19,644 (33.38%)
+Neutral: 17,592 (29.90%)
+Most frequent entity: TomClancysGhostRecon with 2,254 rows (3.83%)
+Model token count p95: 47
+Model token count p99: 56
+Recommended initial max sequence length: 60
+```
+
+EDA carry-forward decision:
+
+- Use stratified train, validation, and test splits because class balance is moderate but not equal.
+- Report macro F1 as well as accuracy during evaluation.
+- Build the model vocabulary from the training split only to avoid leakage.
+- Treat 60 tokens as the initial maximum sequence length candidate.
+- Use the Phase 4 duplicate-text audit before final modeling to reduce leakage risk.
+
+## Phase 6 Status - Feature Engineering
+
+Phase 6 has been implemented on branch `phase/06-feature-engineering`.
+
+Completed work:
+
+- Loaded the Phase 4 preprocessed dataset.
+- Created leakage-aware train, validation, and test splits by assigning each unique `model_text` value to exactly one split.
+- Preserved the Phase 4 label mapping:
+  - `Negative` -> `0`
+  - `Neutral` -> `1`
+  - `Positive` -> `2`
+- Built the RNN vocabulary from training rows only.
+- Reserved special token IDs for later PyTorch embedding use:
+  - `<PAD>` -> `0`
+  - `<OOV>` -> `1`
+- Converted each tweet into a padded integer sequence with maximum length 60.
+- Saved compressed NumPy arrays for train, validation, and test splits under `outputs/data/phase6_sequences.npz`.
+- Saved a row-level feature audit under `outputs/data/twitter_features_phase6.csv`.
+- Saved training-derived vocabulary metadata under `outputs/data/phase6_vocabulary.json`.
+- Saved TF-IDF vocabulary metadata for an optional baseline under `outputs/data/phase6_tfidf_vocabulary.csv`.
+- Generated Phase 6 audit tables under `outputs/tables`.
+- Generated a short feature engineering summary under `outputs/reports/phase6_feature_engineering_summary.md`.
+
+Phase 6 verified run:
+
+```text
+Rows engineered: 58,841
+Train rows: 41,189
+Validation rows: 8,826
+Test rows: 8,826
+model_text values appearing in multiple splits: 0
+Conflicting-label model_text groups kept in one split: 123
+Rows in conflicting-label model_text groups: 1,725
+Vocabulary size including special tokens: 17,924
+Max sequence length: 60
+Rows truncated at max sequence length: 213
+TF-IDF metadata features: 5,000
+```
+
+Phase 6 intentionally did not train a model. The next phase should use `outputs/data/phase6_sequences.npz` to create PyTorch `Dataset` and `DataLoader` objects, then build an embedding-based LSTM or GRU with `input_dim=17,924` and `padding_idx=0`.
+
+## Phase 7 Status - Baseline RNN Modeling
+
+Phase 7 has been implemented on branch `phase/07-rnn-modeling`.
+
+Completed work:
+
+- Merged the completed Phase 6 artifacts into the Phase 7 branch.
+- Loaded `outputs/data/phase6_sequences.npz` and `outputs/data/phase6_feature_config.json`.
+- Created PyTorch `TensorDataset` and `DataLoader` objects for the train and validation splits.
+- Built a compact embedding plus GRU sentiment classifier.
+- Used class-weighted cross entropy to account for moderate class imbalance.
+- Trained the model on the training split for three epochs.
+- Monitored validation loss, accuracy, and macro F1 after every epoch.
+- Saved the best validation checkpoint under `outputs/models/phase7_baseline_gru_state.pt`.
+- Saved checkpoint metadata under `outputs/models/phase7_baseline_gru_metadata.json`.
+- Saved Phase 7 history, validation metrics, confusion matrix, and model config under `outputs/tables`.
+- Saved a learning curve under `outputs/figures/phase7_learning_curve.svg`.
+- Generated a short modeling summary under `outputs/reports/phase7_rnn_modeling_summary.md`.
+
+Phase 7 verified run:
+
+```text
+Runtime: PyTorch 2.10.0+cpu
+Device: CPU
+Train rows: 41,189
+Validation rows: 8,826
+Held-out test rows reserved for Phase 8: 8,826
+Vocabulary size: 17,924
+Model: Embedding(17,924, 64) + GRU(hidden=64) + dropout + linear classifier
+Trainable parameters: 1,172,291
+Epochs trained: 3
+Best validation epoch: 3
+Best validation loss: 0.8735
+Best validation accuracy: 0.6313
+Best validation macro F1: 0.6185
+Held-out test split used: no
+```
+
+Phase 7 intentionally used only the train and validation splits. The next phase should load the saved checkpoint and evaluate it once on the held-out test split, reporting accuracy, precision, recall, macro F1, weighted F1, and a confusion matrix.
+
 ## Rubric Alignment
 
 The final notebook and report should visibly cover every rubric criterion:
@@ -120,6 +327,7 @@ Recommended model sequence:
 |-- src/
 |   `-- __init__.py
 |-- outputs/
+|   |-- data/
 |   |-- figures/
 |   |-- models/
 |   |-- reports/

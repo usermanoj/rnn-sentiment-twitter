@@ -1,0 +1,5 @@
+column,missing_count,missing_percent,unique_values,dtype
+tweet_id,0,0.0,12447,int64
+entity,0,0.0,32,str
+sentiment,0,0.0,4,str
+tweet_text,686,0.92,69491,str

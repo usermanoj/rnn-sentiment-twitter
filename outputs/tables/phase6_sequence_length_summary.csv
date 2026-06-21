@@ -1,0 +1,4 @@
+split,rows,mean_model_tokens,p95_model_tokens,max_model_tokens,mean_sequence_length,rows_truncated,total_truncated_tokens
+train,41189,18.9,47.0,149,18.88,142,845
+validation,8826,19.73,48.0,166,19.71,33,211
+test,8826,19.0,47.0,99,18.98,38,199

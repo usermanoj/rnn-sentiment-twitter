@@ -1,0 +1,4 @@
+sentiment,rows,raw_word_mean,raw_word_median,model_token_mean,model_token_median,model_token_p25,model_token_p75,model_token_p90,model_token_p95,analysis_token_mean,analysis_token_median
+Negative,21605,20.51,17.0,20.02,16.0,9.0,29.0,42.0,48.0,11.23,10.0
+Neutral,17592,20.48,17.0,19.78,17.0,10.0,27.0,40.0,46.0,12.29,11.0
+Positive,19644,17.68,14.0,17.31,14.0,7.0,24.0,38.0,46.0,9.94,8.0

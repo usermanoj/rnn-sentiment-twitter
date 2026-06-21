@@ -1,0 +1,4 @@
+sentiment,model_token_count_count,model_token_count_mean,model_token_count_median,model_token_count_std,model_token_count_min,model_token_count_max,analysis_token_count_count,analysis_token_count_mean,analysis_token_count_median,analysis_token_count_std,analysis_token_count_min,analysis_token_count_max
+Negative,21605,20.02,16.0,14.37,1,107,21605,11.23,10.0,7.82,1,99
+Neutral,17592,19.78,17.0,13.06,1,149,17592,12.29,11.0,7.72,1,130
+Positive,19644,17.31,14.0,13.59,1,166,19644,9.94,8.0,7.57,1,99

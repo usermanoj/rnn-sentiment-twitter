@@ -1,0 +1,10 @@
+split,sentiment,count,split_rows,percent_within_split,percent_of_dataset
+train,Negative,15124,41189,36.72,25.7
+train,Neutral,12314,41189,29.9,20.93
+train,Positive,13751,41189,33.39,23.37
+validation,Negative,3240,8826,36.71,5.51
+validation,Neutral,2639,8826,29.9,4.48
+validation,Positive,2947,8826,33.39,5.01
+test,Negative,3241,8826,36.72,5.51
+test,Neutral,2639,8826,29.9,4.48
+test,Positive,2946,8826,33.38,5.01
