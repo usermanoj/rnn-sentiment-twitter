@@ -1,0 +1,10 @@
+metric,value
+rows_preprocessed,"58,841"
+unique_entities,32
+unique_sentiments,3
+empty_processed_text_before_analysis_fallback,"1,151"
+empty_model_token_rows,0
+empty_analysis_token_rows,0
+model_token_count_p95,47.00
+model_token_count_p99,56.00
+recommended_max_sequence_length_for_later_padding,60

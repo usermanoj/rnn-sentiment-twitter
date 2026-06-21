@@ -15,6 +15,7 @@ wordcloud
 nltk
 
 # Notebook execution
+ipython
 jupyter
 notebook
 ipykernel

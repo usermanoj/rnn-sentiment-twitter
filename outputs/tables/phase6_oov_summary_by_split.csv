@@ -1,0 +1,4 @@
+split,rows,mean_oov_token_count,total_oov_tokens,mean_oov_token_rate
+train,41189,0.1324,5454,0.0084
+validation,8826,0.2768,2443,0.0176
+test,8826,0.2819,2488,0.0175

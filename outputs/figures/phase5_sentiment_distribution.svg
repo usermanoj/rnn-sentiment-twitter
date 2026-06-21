@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="560" viewBox="0 0 920 560" role="img">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="460.0" y="35" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#222">Sentiment Distribution</text>
+<line x1="90" y1="430" x2="880" y2="430" stroke="#333" stroke-width="1"/>
+<line x1="90" y1="80" x2="90" y2="430" stroke="#333" stroke-width="1"/>
+<text x="25" y="255.0" text-anchor="middle" transform="rotate(-90 25 255.0)" font-family="Arial" font-size="14" fill="#333">Tweet count</text>
+<rect x="90.0" y="80.0" width="247.3" height="350.0" rx="4" fill="#2f6f9f"/>
+<text x="213.7" y="70.0" text-anchor="middle" font-family="Arial" font-size="13" fill="#222">21,605 (36.7%)</text>
+<text x="213.7" y="458" text-anchor="middle" font-family="Arial" font-size="14" fill="#222">Negative</text>
+<rect x="361.3" y="111.8" width="247.3" height="318.2" rx="4" fill="#2f6f9f"/>
+<text x="485.0" y="101.8" text-anchor="middle" font-family="Arial" font-size="13" fill="#222">19,644 (33.4%)</text>
+<text x="485.0" y="458" text-anchor="middle" font-family="Arial" font-size="14" fill="#222">Positive</text>
+<rect x="632.7" y="145.0" width="247.3" height="285.0" rx="4" fill="#2f6f9f"/>
+<text x="756.3" y="135.0" text-anchor="middle" font-family="Arial" font-size="13" fill="#222">17,592 (29.9%)</text>
+<text x="756.3" y="458" text-anchor="middle" font-family="Arial" font-size="14" fill="#222">Neutral</text>
+</svg>

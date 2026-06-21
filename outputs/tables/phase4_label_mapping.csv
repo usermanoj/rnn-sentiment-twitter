@@ -1,0 +1,4 @@
+sentiment,label_id,note
+Negative,0,negative class
+Neutral,1,neutral class
+Positive,2,positive class

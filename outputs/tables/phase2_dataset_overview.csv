@@ -1,0 +1,9 @@
+metric,value
+row_count,74682
+column_count,4
+schema_matches_expected_columns,True
+unique_tweet_ids,12447
+unique_entities,32
+unique_sentiments,4
+missing_tweet_text,686
+exact_duplicate_rows,2700

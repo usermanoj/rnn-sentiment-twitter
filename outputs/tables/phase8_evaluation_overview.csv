@@ -1,0 +1,10 @@
+metric,value
+checkpoint_path,C:\Projects\RNN-Graded-Mini-Project\outputs\models\phase7_baseline_gru_state.pt
+best_validation_epoch,3
+best_validation_macro_f1,0.6185
+test_rows,"8,826"
+test_loss_weighted_cross_entropy,0.8627
+test_accuracy,0.6387
+test_macro_f1,0.6262
+test_weighted_f1,0.6313
+test_split_used_for_training_or_tuning,no
