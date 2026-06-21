@@ -1,0 +1,96 @@
+path,bytes,purpose
+notebooks/RNN_Sentiment_Analysis_Twitter.ipynb,171995,notebook source and implementation
+outputs/data/phase6_feature_config.json,577,"configuration, vocabulary, or metadata"
+outputs/data/phase6_sequences.npz,1599121,supporting artifact
+outputs/data/phase6_tfidf_vocabulary.csv,164368,"metrics, audit table, or prediction output"
+outputs/data/phase6_vocabulary.json,396841,"configuration, vocabulary, or metadata"
+outputs/data/phase8_test_predictions.csv,1647608,"metrics, audit table, or prediction output"
+outputs/figures/phase5_sentiment_distribution.svg,1505,figure or visualization
+outputs/figures/phase5_top_entities.svg,4421,figure or visualization
+outputs/figures/phase5_top_tokens_by_sentiment.svg,8350,figure or visualization
+outputs/figures/phase5_tweet_length_by_sentiment.svg,3965,figure or visualization
+outputs/figures/phase5_wordcloud_negative.svg,6854,figure or visualization
+outputs/figures/phase5_wordcloud_positive.svg,6850,figure or visualization
+outputs/figures/phase7_learning_curve.svg,3503,figure or visualization
+outputs/figures/phase8_test_confusion_matrix.svg,4506,figure or visualization
+outputs/figures/phase9_best_learning_curve.svg,3272,figure or visualization
+outputs/figures/phase9_validation_comparison.svg,3721,figure or visualization
+outputs/models/phase7_baseline_gru_metadata.json,1036,"configuration, vocabulary, or metadata"
+outputs/models/phase7_baseline_gru_state.pt,4693947,saved PyTorch model checkpoint
+outputs/models/phase9_best_validation_model_metadata.json,1033,"configuration, vocabulary, or metadata"
+outputs/models/phase9_best_validation_model_state.pt,4781168,saved PyTorch model checkpoint
+outputs/reports/final_project_report.md,4529,written summary or package documentation
+outputs/reports/phase10_final_deliverables_summary.md,710,written summary or package documentation
+outputs/reports/phase10_final_submission_checklist.md,693,written summary or package documentation
+outputs/reports/phase2_validation_summary.md,705,written summary or package documentation
+outputs/reports/phase3_cleaning_summary.md,1067,written summary or package documentation
+outputs/reports/phase4_text_preprocessing_summary.md,1527,written summary or package documentation
+outputs/reports/phase5_eda_insights.md,2704,written summary or package documentation
+outputs/reports/phase6_feature_engineering_summary.md,2585,written summary or package documentation
+outputs/reports/phase7_rnn_modeling_summary.md,1490,written summary or package documentation
+outputs/reports/phase8_evaluation_summary.md,1518,written summary or package documentation
+outputs/reports/phase9_model_improvement_summary.md,2446,written summary or package documentation
+outputs/reports/rnn_twitter_sentiment_final_presentation.pptx,50197,final presentation deck
+outputs/submission/Module 31 - Graded Mini Project_Bhardwaj.pdf,187733,supporting artifact
+outputs/submission/Module_31_Graded_Mini_Project_Final_Report.pdf,187733,primary final PDF report
+outputs/submission/README_SUBMISSION.md,901,written summary or package documentation
+outputs/submission/submission_manifest.csv,8655,"metrics, audit table, or prediction output"
+outputs/tables/phase10_final_key_metrics.csv,772,"metrics, audit table, or prediction output"
+outputs/tables/phase2_blank_text_by_sentiment.csv,90,"metrics, audit table, or prediction output"
+outputs/tables/phase2_dataset_overview.csv,201,"metrics, audit table, or prediction output"
+outputs/tables/phase2_duplicate_summary.csv,175,"metrics, audit table, or prediction output"
+outputs/tables/phase2_length_summary_by_sentiment.csv,455,"metrics, audit table, or prediction output"
+outputs/tables/phase2_length_summary_overall.csv,211,"metrics, audit table, or prediction output"
+outputs/tables/phase2_missing_summary.csv,161,"metrics, audit table, or prediction output"
+outputs/tables/phase2_sentiment_distribution.csv,114,"metrics, audit table, or prediction output"
+outputs/tables/phase2_sentiment_validation.csv,205,"metrics, audit table, or prediction output"
+outputs/tables/phase2_top_entities_raw.csv,792,"metrics, audit table, or prediction output"
+outputs/tables/phase3_cleaned_sentiment_distribution.csv,89,"metrics, audit table, or prediction output"
+outputs/tables/phase3_cleaning_steps.csv,242,"metrics, audit table, or prediction output"
+outputs/tables/phase3_length_summary.csv,291,"metrics, audit table, or prediction output"
+outputs/tables/phase3_sample_cleaned_rows.csv,4824,"metrics, audit table, or prediction output"
+outputs/tables/phase3_text_quality_summary.csv,262,"metrics, audit table, or prediction output"
+outputs/tables/phase4_conflicting_model_text_examples.csv,2252,"metrics, audit table, or prediction output"
+outputs/tables/phase4_duplicate_text_audit.csv,682,"metrics, audit table, or prediction output"
+outputs/tables/phase4_label_mapping.csv,104,"metrics, audit table, or prediction output"
+outputs/tables/phase4_preprocessing_overview.csv,305,"metrics, audit table, or prediction output"
+outputs/tables/phase4_sample_preprocessed_rows.csv,3157,"metrics, audit table, or prediction output"
+outputs/tables/phase4_token_length_by_sentiment.csv,501,"metrics, audit table, or prediction output"
+outputs/tables/phase4_token_length_summary.csv,225,"metrics, audit table, or prediction output"
+outputs/tables/phase4_top_analysis_tokens.csv,1859,"metrics, audit table, or prediction output"
+outputs/tables/phase4_top_analysis_tokens_by_sentiment.csv,4410,"metrics, audit table, or prediction output"
+outputs/tables/phase4_top_model_tokens.csv,1791,"metrics, audit table, or prediction output"
+outputs/tables/phase5_basic_statistics.csv,340,"metrics, audit table, or prediction output"
+outputs/tables/phase5_entity_distribution.csv,788,"metrics, audit table, or prediction output"
+outputs/tables/phase5_length_by_sentiment.csv,390,"metrics, audit table, or prediction output"
+outputs/tables/phase5_sentiment_distribution.csv,89,"metrics, audit table, or prediction output"
+outputs/tables/phase5_top_tokens_by_sentiment.csv,5277,"metrics, audit table, or prediction output"
+outputs/tables/phase6_group_split_audit.csv,280,"metrics, audit table, or prediction output"
+outputs/tables/phase6_oov_summary_by_split.csv,168,"metrics, audit table, or prediction output"
+outputs/tables/phase6_sample_sequences.csv,4029,"metrics, audit table, or prediction output"
+outputs/tables/phase6_sequence_length_summary.csv,246,"metrics, audit table, or prediction output"
+outputs/tables/phase6_split_distribution.csv,421,"metrics, audit table, or prediction output"
+outputs/tables/phase6_tfidf_top_terms_by_sentiment.csv,2232,"metrics, audit table, or prediction output"
+outputs/tables/phase6_vocabulary_summary.csv,303,"metrics, audit table, or prediction output"
+outputs/tables/phase7_model_config.csv,443,"metrics, audit table, or prediction output"
+outputs/tables/phase7_training_history.csv,483,"metrics, audit table, or prediction output"
+outputs/tables/phase7_validation_confusion_matrix.csv,108,"metrics, audit table, or prediction output"
+outputs/tables/phase7_validation_metrics.csv,259,"metrics, audit table, or prediction output"
+outputs/tables/phase8_evaluation_overview.csv,341,"metrics, audit table, or prediction output"
+outputs/tables/phase8_test_confusion_matrix.csv,108,"metrics, audit table, or prediction output"
+outputs/tables/phase8_test_confusion_matrix_normalized.csv,131,"metrics, audit table, or prediction output"
+outputs/tables/phase8_test_metrics.csv,352,"metrics, audit table, or prediction output"
+outputs/tables/phase8_test_prediction_distribution.csv,301,"metrics, audit table, or prediction output"
+outputs/tables/phase8_test_prediction_samples.csv,4408,"metrics, audit table, or prediction output"
+outputs/tables/phase9_best_validation_confusion_matrix.csv,108,"metrics, audit table, or prediction output"
+outputs/tables/phase9_best_validation_metrics.csv,260,"metrics, audit table, or prediction output"
+outputs/tables/phase9_experiment_results.csv,1364,"metrics, audit table, or prediction output"
+outputs/tables/phase9_model_configs.csv,546,"metrics, audit table, or prediction output"
+outputs/tables/phase9_training_history.csv,1892,"metrics, audit table, or prediction output"
+PROJECT_CONTEXT.md,18753,written summary or package documentation
+requirements.txt,268,Python dependency list
+src/__init__.py,71,source script
+src/create_final_submission_package.py,42013,source script
+src/phase10_final_deliverables.py,13254,source script
+src/phase9_model_improvement.py,37346,source script
+twitter_training.csv,10325088,"metrics, audit table, or prediction output"
