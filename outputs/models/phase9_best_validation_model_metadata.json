@@ -1,0 +1,31 @@
+{
+  "best_experiment_id": "gru_hidden96_dropout02",
+  "best_checkpoint_path": "C:\\Projects\\RNN-Graded-Mini-Project\\outputs\\models\\phase9_best_validation_model_state.pt",
+  "selection_metric": "validation_macro_f1",
+  "best_validation_macro_f1": 0.6874150429835696,
+  "phase7_baseline_validation_macro_f1": 0.6185,
+  "validation_macro_f1_improvement": 0.06891504298356954,
+  "phase8_test_macro_f1_reference_only": 0.6262,
+  "total_experiment_seconds": 82.69,
+  "test_split_used": false,
+  "best_config": {
+    "experiment_id": "gru_hidden96_dropout02",
+    "recurrent_type": "GRU",
+    "embedding_dim": 64,
+    "hidden_dim": 96,
+    "dropout_rate": 0.2,
+    "batch_size": 512,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "max_epochs": 4,
+    "early_stopping_patience": 2,
+    "gradient_clip_norm": 1.0,
+    "neutral_weight_multiplier": 1.0,
+    "notes": "larger GRU hidden state with slightly lower dropout"
+  },
+  "class_names": [
+    "Negative",
+    "Neutral",
+    "Positive"
+  ]
+}

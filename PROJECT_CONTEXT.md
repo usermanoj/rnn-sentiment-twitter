@@ -318,6 +318,49 @@ Model retraining or tuning in this phase: no
 
 Phase 8 intentionally did not retrain, tune, or select a model. Phase 9 should treat these held-out test metrics as the baseline result and perform model-improvement experiments using training and validation data before making any further test-set comparisons.
 
+## Phase 9 Status - Model Improvement
+
+Phase 9 has been implemented on branch `phase/09-model-improvement`.
+
+Completed work:
+
+- Merged the completed Phase 8 held-out evaluation baseline into the Phase 9 branch.
+- Added `src/phase9_model_improvement.py` so the improvement experiments can be rerun outside the notebook.
+- Loaded only the Phase 6 train and validation arrays for model selection.
+- Used the Phase 7 validation metrics as the baseline reference.
+- Used the Phase 8 held-out test metrics only as a reporting reference, not for tuning or selection.
+- Trained three candidate recurrent-model variants:
+  - Larger GRU with hidden size 96 and dropout 0.20.
+  - Larger GRU with hidden size 96, dropout 0.30, and boosted neutral-class weight.
+  - LSTM with hidden size 64 and dropout 0.30.
+- Selected the best candidate by validation macro F1.
+- Saved the validation-selected checkpoint under `outputs/models/phase9_best_validation_model_state.pt`.
+- Saved checkpoint metadata under `outputs/models/phase9_best_validation_model_metadata.json`.
+- Saved experiment results, training history, model configs, best validation metrics, and best validation confusion matrix under `outputs/tables`.
+- Saved validation-comparison and best-learning-curve figures under `outputs/figures`.
+- Generated a short improvement summary under `outputs/reports/phase9_model_improvement_summary.md`.
+
+Phase 9 verified run:
+
+```text
+Candidate experiments run: 3
+Selection metric: validation macro F1
+Best experiment: gru_hidden96_dropout02
+Best model: GRU, embedding_dim=64, hidden_dim=96, dropout=0.20
+Best validation epoch: 4
+Phase 7 baseline validation macro F1: 0.6185
+Best Phase 9 validation macro F1: 0.6874
+Validation macro F1 delta: +0.0689
+Best Phase 9 validation accuracy: 0.6926
+Best Phase 9 neutral F1: 0.6309
+Best Phase 9 negative F1: 0.7393
+Best Phase 9 positive F1: 0.6921
+Phase 8 held-out test macro F1 reference: 0.6262
+Held-out test split used in this phase: no
+```
+
+Phase 9 intentionally did not run another held-out test evaluation. Phase 10 should present the Phase 8 test baseline and the Phase 9 validation-driven improvement separately, and should only use the Phase 9 checkpoint for a final test comparison if the final report explicitly requires one more selected-model test result.
+
 ## Rubric Alignment
 
 The final notebook and report should visibly cover every rubric criterion:
