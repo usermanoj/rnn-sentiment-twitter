@@ -1,0 +1,4 @@
+experiment_id,recurrent_type,embedding_dim,hidden_dim,dropout_rate,batch_size,learning_rate,weight_decay,max_epochs,early_stopping_patience,gradient_clip_norm,neutral_weight_multiplier,notes
+gru_hidden96_dropout02,GRU,64,96,0.2,512,0.001,0.0001,4,2,1.0,1.0,larger GRU hidden state with slightly lower dropout
+gru_hidden96_neutral_boost,GRU,64,96,0.3,512,0.001,0.0001,4,2,1.0,1.2,larger GRU with extra neutral-class weight
+lstm_hidden64_dropout03,LSTM,64,64,0.3,512,0.001,0.0001,4,2,1.0,1.0,"same hidden size as baseline, LSTM recurrent cell"
