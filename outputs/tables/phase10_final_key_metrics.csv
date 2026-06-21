@@ -1,0 +1,9 @@
+area,metric,value,source
+Dataset,Cleaned rows,"58,841",outputs/tables/phase5_basic_statistics.csv
+Split,Train / validation / test rows,"41,189 / 8,826 / 8,826",outputs/tables/phase6_split_distribution.csv
+Feature engineering,Final vocabulary size,"17,924",outputs/tables/phase6_vocabulary_summary.csv
+Baseline validation,Phase 7 validation macro F1,0.6185,outputs/tables/phase7_validation_metrics.csv
+Held-out test,Phase 8 test accuracy,0.6387,outputs/tables/phase8_test_metrics.csv
+Held-out test,Phase 8 test macro F1,0.6262,outputs/tables/phase8_test_metrics.csv
+Improvement,Best Phase 9 validation macro F1,0.6874,outputs/tables/phase9_experiment_results.csv
+Improvement,Validation macro F1 lift vs Phase 7,+0.0689,outputs/tables/phase9_experiment_results.csv
