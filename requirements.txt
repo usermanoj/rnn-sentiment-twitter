@@ -22,3 +22,8 @@ ipykernel
 
 # Utilities
 tqdm
+
+# Final report packaging
+pillow
+reportlab
+pypdf

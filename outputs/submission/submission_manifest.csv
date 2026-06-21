@@ -34,7 +34,7 @@ outputs/reports/rnn_twitter_sentiment_final_presentation.pptx,50197,final presen
 outputs/submission/Module 31 - Graded Mini Project_Bhardwaj.pdf,187733,supporting artifact
 outputs/submission/Module_31_Graded_Mini_Project_Final_Report.pdf,187733,primary final PDF report
 outputs/submission/README_SUBMISSION.md,901,written summary or package documentation
-outputs/submission/submission_manifest.csv,8655,"metrics, audit table, or prediction output"
+outputs/submission/submission_manifest.csv,8712,"metrics, audit table, or prediction output"
 outputs/tables/phase10_final_key_metrics.csv,772,"metrics, audit table, or prediction output"
 outputs/tables/phase2_blank_text_by_sentiment.csv,90,"metrics, audit table, or prediction output"
 outputs/tables/phase2_dataset_overview.csv,201,"metrics, audit table, or prediction output"
@@ -88,9 +88,10 @@ outputs/tables/phase9_experiment_results.csv,1364,"metrics, audit table, or pred
 outputs/tables/phase9_model_configs.csv,546,"metrics, audit table, or prediction output"
 outputs/tables/phase9_training_history.csv,1892,"metrics, audit table, or prediction output"
 PROJECT_CONTEXT.md,18753,written summary or package documentation
-requirements.txt,268,Python dependency list
+README.md,9518,written summary or package documentation
+requirements.txt,315,Python dependency list
 src/__init__.py,71,source script
-src/create_final_submission_package.py,42013,source script
+src/create_final_submission_package.py,42041,source script
 src/phase10_final_deliverables.py,13254,source script
 src/phase9_model_improvement.py,37346,source script
 twitter_training.csv,10325088,"metrics, audit table, or prediction output"

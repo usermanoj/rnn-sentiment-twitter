@@ -930,6 +930,7 @@ def collect_package_entries() -> list[Path]:
     entries: list[Path] = [
         CANONICAL_PDF_PATH,
         PDF_PATH,
+        ROOT / "README.md",
         README_PATH,
         MANIFEST_PATH,
         ROOT / "requirements.txt",
